@@ -73,6 +73,16 @@ export class AppComponent {
     this.checkbox = noticia.checkbox;
     this.categorias = ['cat1','cat2'];
     this.tags = ['tag1','tag2'];
-    this.noticias.splice(noticia);
+
+    noticia.titulo = this.titulo,
+    noticia.descricao = this.descricao,
+    noticia.date = this.date,
+    noticia.checkbox = this.checkbox,
+    noticia.categoria = this.selectCategoria,
+    noticia.tags = this.selectTags,
+    noticia.editoria = this.radio,
+    noticia.visivel = false
+    
+    this.noticias.splice(this.noticias.findIndex(n => n.id === noticia.id), 1);
   }
 }
